@@ -13,3 +13,5 @@ else
   puts "[Bigindex-Solr] RAILS_ROOT/config/bigindex.yml file already exists. Copying it as bigindex.yml.sample for reference."
   FileUtils.cp(source, alternate_target)
 end
+
+FileUtils.mkdir_p(File.join(RAILS_ROOT, "solr"))
