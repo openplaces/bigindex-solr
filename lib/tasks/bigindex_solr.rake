@@ -1,6 +1,6 @@
 namespace :bigindex do
   namespace :solr do
-    
+
     desc 'Generates a bigindex.yml config file and places it into your RAILS_ROOT/config folder. Creates bigindex.yml.sample if the file already exists.'
     task :generate_config do
       require File.join(File.dirname(__FILE__), "..", "..", "install.rb")
@@ -9,7 +9,7 @@ namespace :bigindex do
     desc 'Starts Solr. Options accepted: RAILS_ENV=your_env, PORT=XX. Defaults to development if none.'
     task :start do
       require 'net/http'
-      
+
       unless defined?(BigindexSolr)
         require File.join(File.dirname(__FILE__), "..", "bigindex-solr")
       end
@@ -22,9 +22,11 @@ namespace :bigindex do
         puts "Port #{BigindexSolr::PORT} in use" and return
 
       rescue Errno::ECONNREFUSED #not responding
+        ENV['JAVA_BIN'] ||= 'java'
+
         Dir.chdir(BigindexSolr::SOLR_PATH) do
           pid = fork do
-            exec "java #{BigindexSolr::JVM_OPTIONS} -Dsolr.data.dir=#{BigindexSolr::DATA_PATH} -Djetty.logs=#{BigindexSolr::LOGS_PATH} -Djetty.port=#{BigindexSolr::PORT} -jar start.jar"
+            exec "#{ENV['JAVA_BIN']} #{BigindexSolr::JVM_OPTIONS} -Dsolr.data.dir=#{BigindexSolr::DATA_PATH} -Djetty.logs=#{BigindexSolr::LOGS_PATH} -Djetty.port=#{BigindexSolr::PORT} -jar start.jar"
           end
           sleep(5)
           File.open("#{BigindexSolr::PID_PATH}/#{BigindexSolr::ENVIRONMENT}_pid", "w"){ |f| f << pid}

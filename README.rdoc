@@ -8,7 +8,7 @@ The version of this project corresponds to the version of Solr that's packaged a
 
 == Requirements
 
-* This gem requires that your system have Java 1.6+ installed and working properly. It also requires that the command line app "java" be accessible from the account you're trying to run this from.
+* Java 1.6+ (It also requires that the command line tool "java" be accessible from the account you're trying to run this from)
 * Although it's not required to get this gem working, Bigindex should be installed and working with your Rails application in order to actually interface with Solr. You could of course install this package standalone if all you wanted was Solr.
 
 == Usage
@@ -51,6 +51,10 @@ It's possible to define what JVM options to start up Solr with. Just edit the RA
     adapter: solr
     solr_url: http://localhost:8981/solr
     jvm_options: -Xms64m -Xmx512m
+
+== Solr schema
+
+Bigindex has a defined schema to use with Solr. If you need to set up Solr yourself, you'll need to either use the schema.xml defined in this project, or create a merged version of it with your own.
 
 == Note on Patches/Pull Requests
  
