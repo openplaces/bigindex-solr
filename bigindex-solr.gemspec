@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["openplaces.org"]
   s.date = %q{2009-10-15}
-  s.description = %q{longer description of your gem}
+  s.description = %q{Solr is an Apache open-source search server based on Lucene Java. This project aims to integrate Solr into your Rails application to work with Bigindex [http://github.com/openplaces/bigindex]}
   s.email = %q{bigrecord@openplaces.org}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -120,7 +120,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{one-line summary of your gem}
+  s.summary = %q{Bootstraps the Solr search server into your Rails application for use with Bigindex.}
   s.test_files = [
     "spec/bigindex-solr_spec.rb",
      "spec/spec_helper.rb"

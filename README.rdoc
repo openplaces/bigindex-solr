@@ -1,10 +1,11 @@
 = Bigindex-Solr
 
-Add the power of the Solr search server to your Rails application in this easy to use gem.
+Add the power of the Solr search server to your Rails application with this easy to use gem. Meant to be used with Bigindex [http://github.com/openplaces/bigindex] in order to provide indexing functionality to your Rails application.
 
 == Requirements
 
-This gem requires that your system have Java 1.6 installed and working properly. It also requires that the command line app "java" be accessible from the account you're trying to run this from.
+* This gem requires that your system have Java 1.6+ installed and working properly. It also requires that the command line app "java" be accessible from the account you're trying to run this from.
+* Although it's not required to get this gem working, Bigindex should be installed and working with your Rails application in order to actually interface with Solr. You could of course install this package standalone if all you wanted was Solr.
 
 == Usage
 
