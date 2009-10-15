@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "bigindex-solr"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{one-line summary of your gem}
+    gem.description = %Q{longer description of your gem}
     gem.email = "bigrecord@openplaces.org"
     gem.homepage = "http://bigrecord.org"
     gem.authors = ["openplaces.org"]

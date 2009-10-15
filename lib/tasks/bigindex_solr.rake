@@ -21,7 +21,6 @@ namespace :bigindex do
           pid = fork do
             exec "java #{BigindexSolr::JVM_OPTIONS} -Dsolr.data.dir=#{BigindexSolr::DATA_PATH} -Djetty.logs=#{BigindexSolr::LOGS_PATH} -Djetty.port=#{BigindexSolr::PORT} -jar start.jar"
           end
-          Process.detach(pid)
           sleep(5)
           File.open("#{BigindexSolr::PID_PATH}/#{BigindexSolr::ENVIRONMENT}_pid", "w"){ |f| f << pid}
           puts "[#{BigindexSolr::ENVIRONMENT}] Solr started successfully on #{BigindexSolr::PORT}, pid: #{pid}."

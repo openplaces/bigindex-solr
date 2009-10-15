@@ -27,4 +27,4 @@ module BigindexSolr
     JVM_OPTIONS = CONFIG[ENVIRONMENT]['jvm_options'] || ""
   end
 
-end # module BigIndexSolr
+end # module BigindexSolr
