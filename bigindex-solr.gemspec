@@ -120,7 +120,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Bootstraps the Solr search server into your Rails application for use with Bigindex.}
+  s.summary = %q{Bootstraps the Solr search server into your Rails application for use with Bigindex. Gem version is based on the Solr version packaged.}
   s.test_files = [
     "spec/bigindex-solr_spec.rb",
      "spec/spec_helper.rb"

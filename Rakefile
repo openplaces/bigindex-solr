@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "bigindex-solr"
-    gem.summary = %Q{Bootstraps the Solr search server into your Rails application for use with Bigindex.}
+    gem.summary = %Q{Bootstraps the Solr search server into your Rails application for use with Bigindex. Gem version is based on the Solr version packaged.}
     gem.description = %Q{Solr is an Apache open-source search server based on Lucene Java. This project aims to integrate Solr into your Rails application to work with Bigindex [http://github.com/openplaces/bigindex]}
     gem.email = "bigrecord@openplaces.org"
     gem.homepage = "http://bigrecord.org"
