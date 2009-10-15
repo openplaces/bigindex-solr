@@ -31,6 +31,10 @@ The version of this project corresponds to the version of Solr that's packaged a
 
   rake bigindex:solr:start
 
+Optional: You can also define the 'java' binary to start up Solr with by sending it a JAVA_BIN argument:
+
+  rake bigindex:solr:start JAVA_BIN=/path/to/other/java
+
 (6) Stop your Solr server when you're done
 
   rake bigindex:solr:stop
@@ -57,7 +61,7 @@ It's possible to define what JVM options to start up Solr with. Just edit the RA
 Bigindex has a defined schema to use with Solr. If you need to set up Solr yourself, you'll need to either use the schema.xml defined in this project, or create a merged version of it with your own.
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a future version unintentionally.
