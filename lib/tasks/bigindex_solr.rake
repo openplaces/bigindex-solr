@@ -1,5 +1,10 @@
 namespace :bigindex do
   namespace :solr do
+    
+    desc 'Generates a bigindex.yml config file and places it into your RAILS_ROOT/config folder. Creates bigindex.yml.sample if the file already exists.'
+    task :generate_config do
+      require File.join(File.dirname(__FILE__), "..", "..", "install.rb")
+    end
 
     desc 'Starts Solr. Options accepted: RAILS_ENV=your_env, PORT=XX. Defaults to development if none.'
     task :start do
