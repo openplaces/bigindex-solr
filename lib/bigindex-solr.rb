@@ -21,7 +21,7 @@ module BigindexSolr
     CONFIG = {}
   end
 
-  raise LoadError, "[Bigindex-Solr] The adapter defined for environment: #{ENVIRONMENT} is not solr" unless CONFIG['adapter'] == "solr"
+  raise LoadError, "[Bigindex-Solr] The adapter defined for environment: #{ENVIRONMENT} is not solr" unless CONFIG[ENVIRONMENT]['adapter'] == "solr"
 
   unless CONFIG.empty? || CONFIG[ENVIRONMENT].nil?
     URL = CONFIG[ENVIRONMENT]['solr_url']
