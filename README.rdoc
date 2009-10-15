@@ -2,35 +2,39 @@
 
 Add the power of the Solr search server to your Rails application in this easy to use gem.
 
+== Requirements
+
+This gem requires that your system have Java 1.6 installed and working properly. It also requires that the command line app "java" be accessible from the account you're trying to run this from.
+
 == Usage
 
-(1) Add the following line RAILS_ROOT/config/environment.rb
+(1) Add the following line to your RAILS_ROOT/config/environment.rb
 
-	config.gem "bigindex-solr", :source => "http://gemcutter.org"
+  config.gem "bigindex-solr", :source => "http://gemcutter.org"
 
 (2) Add the following line to the bottom of your RAILS_ROOT/Rakefile
 
-	require 'bigindex-solr/tasks'
+  require 'bigindex-solr/tasks'
 
 (3) Run the following rake task to generate a config for your Rails application
 
-	rake bigindex:solr:generate_config
+  rake bigindex:solr:generate_config
 
 (4) Modify RAILS_ROOT/config/bigindex.yml to start up on a specified port of your choice
 
 (5) Start up your Solr server
 
-	rake bigindex:solr:start
+  rake bigindex:solr:start
 
 (6) Stop your Solr server when you're done
 
-	rake bigindex:solr:stop
+  rake bigindex:solr:stop
 
 == Alternate usage
 
 You can also install Bigindex-Solr as a plugin by running:
 
-	script/plugin install git://github.com/openplaces/bigindex-solr.git
+  script/plugin install git://github.com/openplaces/bigindex-solr.git
 
 and continuing with step (4) in the previous section.
 
@@ -38,26 +42,27 @@ and continuing with step (4) in the previous section.
 
 It's possible to define what JVM options to start up Solr with. Just edit the RAILS_ROOT/config/bigindex.yml similarly to this:
 
-	development:
-		adapter: solr
-		solr_url: http://localhost:8981/solr
-		jvm_options: -Xms64m -Xmx512m
+  development:
+    adapter: solr
+    solr_url: http://localhost:8981/solr
+    jvm_options: -Xms64m -Xmx512m
 
 == Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
 == Credits
 
 This project was derived from acts_as_solr
 
+== LICENSE
+
+This project is released under the MIT license.
+
 == Copyright
 
-Copyright (c) 2009 openplaces.org. See LICENSE for details.
+Copyright (c) 2009 openplaces.org. See MIT-LICENSE for details.
